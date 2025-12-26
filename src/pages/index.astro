@@ -4,10 +4,29 @@ import Layout from '../layouts/Layout.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-<Layout>
-  <div class="m-10 rounded-2xl bg-black p-10 text-5xl font-black text-white">
-    SI VES ESTO EN NEGRO, TAILWIND FUNCIONA
-  </div>
+<Layout title = "Mi Sublimar">
+	<header class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+		<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+
+		<a href="/" class="text-lg font-black tracking-tight text-neutral-900">
+			Mi Sublimar
+		</a>
+
+		<nav class = "hidden items-center gap-6 text-sm font-medium text-neutral-700 md:flex">
+			<a href = "#productos" class = "hover:text-neutral-900">Productos</a>
+			<a href = "#como-funciona" class = "hover:text-neutral-900">Cómo funciona</a>
+			<a href = "#contacto" class = "hover:text-neutral-900">Contacto</a>
+		</nav>
+
+		<a href="#contacto" class="rounded-xl bg-neutral-900 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-800">
+			Pedir presupuesto
+		</a>
+		</div>
+	</header>
+
+	<main>
+
+	</main>
 </Layout>
 
 
