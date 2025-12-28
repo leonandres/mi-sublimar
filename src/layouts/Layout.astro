@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+const { title = "Mi Sublimar" } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -8,9 +9,9 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="min-h-screen bg-neutral-50 text-neutral-900">
 		<slot />
 	</body>
 </html>

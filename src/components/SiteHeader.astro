@@ -1,0 +1,49 @@
+---
+const nav = [
+  { label: "DISEÑO GRÁFICO", href: "/diseno-grafico" },
+  { label: "ILUSTRACIÓN", href: "/ilustracion" },
+  { label: "TIENDA", href: "/tienda" },
+  { label: "ACERCA DE MI", href: "/acerca" },
+  { label: "CONTACTO", href: "/contacto" },
+];
+---
+
+<header class="w-full">
+  <!-- Top bar -->
+  <div class = "border-b border-neutral-200 bg-neutral-100 text-[12px] text-neutral-600">
+    <div class ="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
+      <div class ="flex flex-wrap gap-x-6 gap-y-1">
+        <span>+54 9 11 3704 4312</span>
+        <span>info@misublimar.com.ar</span>
+        <span>Work time: 10:00 - 18:00</span>
+      </div>
+
+      <div class ="flex items-center gap-4">
+        <span class ="hidden sm:inline">f</span>
+        <span class ="hidden sm:inline">ig</span>
+        <span class ="hidden sm:inline">in</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <div class ="bg-white">
+    <div class ="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <a href ="/" class="flex items-center gap-2">
+        <span class ="text-3xl font-black italic text-red-500">m</span>
+        <span class ="text-sm tracking-wide text-neutral-700">mi sublimar</span>
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm tracking-wide text-neutral-800 md:flex">
+        {nav.map((item) => (
+          <a class="hover:text-neutral-500" href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+
+      <div class = "flex items-center gap-4 text-neutral-700">
+        <span title = "Carrito">👜</span>
+        <span title = "Favoritos">♡</span>
+      </div>
+    </div>
+  </div>
+</header>
