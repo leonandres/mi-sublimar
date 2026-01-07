@@ -10,39 +10,104 @@ const nav = [
 
 <header class="w-full">
   <!-- Top bar -->
-  <div class = "border-b border-neutral-200 bg-neutral-100 text-[12px] text-neutral-600">
-    <div class ="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
-      <div class ="flex flex-wrap gap-x-6 gap-y-1">
-        <span>+54 9 11 3704 4312</span>
-        <span>info@misublimar.com.ar</span>
-        <span>Work time: 10:00 - 18:00</span>
+  <div class="border-b border-neutral-200 bg-neutral-50 text-[12px] text-neutral-600">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-2">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-1">
+        <a class="hover:text-neutral-900" href="tel:+5491137044312">+54 9 11 3704 4312</a>
+        <a class="hover:text-neutral-900" href="mailto:info@misublimar.com.ar">info@misublimar.com.ar</a>
+        <span class="hidden sm:inline">Lun a Vie: 10:00–18:00</span>
       </div>
 
-      <div class ="flex items-center gap-4">
-        <span class ="hidden sm:inline">f</span>
-        <span class ="hidden sm:inline">ig</span>
-        <span class ="hidden sm:inline">in</span>
+      <div class="flex items-center gap-3">
+        <a class="hover:text-neutral-900" href="#" aria-label="Facebook">Fb</a>
+        <a class="hover:text-neutral-900" href="#" aria-label="Instagram">Ig</a>
+        <a class="hover:text-neutral-900" href="#" aria-label="LinkedIn">In</a>
       </div>
     </div>
   </div>
 
-  <!-- Main nav -->
-  <div class ="bg-white">
-    <div class ="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-      <a href ="/" class="flex items-center gap-2">
-        <span class ="text-3xl font-black italic text-red-500">m</span>
-        <span class ="text-sm tracking-wide text-neutral-700">mi sublimar</span>
+  <!-- Main nav (sticky + blur) -->
+  <div class="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
+      <!-- Brand -->
+      <a href="/" class="group flex items-center gap-3">
+        <div class="grid size-10 place-items-center rounded-2xl bg-neutral-900 text-white">
+          <span class="font-black tracking-tight">MS</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-[var(--font-ui)] text-sm font-extrabold tracking-wide text-neutral-900">
+            MI SUBLIMAR
+          </div>
+          <div class="text-xs text-neutral-600 group-hover:text-neutral-700">
+            diseño • ilustración • tienda
+          </div>
+        </div>
       </a>
 
-      <nav class="hidden items-center gap-7 text-sm tracking-wide text-neutral-800 md:flex">
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-7 text-sm font-semibold tracking-wide text-neutral-800 md:flex">
         {nav.map((item) => (
           <a class="hover:text-neutral-500" href={item.href}>{item.label}</a>
         ))}
       </nav>
 
-      <div class = "flex items-center gap-4 text-neutral-700">
-        <span title = "Carrito">👜</span>
-        <span title = "Favoritos">♡</span>
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <a
+          href="/contacto"
+          class="hidden rounded-full bg-neutral-900 px-4 py-2 text-xs font-semibold tracking-wide text-white hover:bg-neutral-800 md:inline-flex"
+        >
+          PEDIR PRESUPUESTO
+        </a>
+
+        <a
+          class="grid size-10 place-items-center rounded-full border border-neutral-200 bg-white hover:bg-neutral-50"
+          href="/tienda"
+          aria-label="Carrito"
+          title="Carrito"
+        >
+          👜
+        </a>
+
+        <a
+          class="grid size-10 place-items-center rounded-full border border-neutral-200 bg-white hover:bg-neutral-50"
+          href="#"
+          aria-label="Favoritos"
+          title="Favoritos"
+        >
+          ♡
+        </a>
+
+        <!-- Mobile menu -->
+        <details class="md:hidden">
+          <summary
+            class="list-none grid size-10 cursor-pointer place-items-center rounded-full border border-neutral-200 bg-white hover:bg-neutral-50"
+            aria-label="Abrir menú"
+            title="Menú"
+          >
+            ☰
+          </summary>
+
+          <div class="absolute left-0 right-0 top-full border-b border-neutral-200 bg-white shadow-sm">
+            <div class="mx-auto grid max-w-6xl gap-2 px-4 py-4">
+              {nav.map((item) => (
+                <a
+                  class="rounded-xl px-3 py-3 text-sm font-semibold tracking-wide text-neutral-800 hover:bg-neutral-50"
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              ))}
+
+              <a
+                href="/contacto"
+                class="mt-1 inline-flex items-center justify-center rounded-xl bg-neutral-900 px-4 py-3 text-sm font-semibold text-white hover:bg-neutral-800"
+              >
+                PEDIR PRESUPUESTO
+              </a>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </div>

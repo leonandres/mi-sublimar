@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root{
+  --font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: "Montserrat", "Open Sans", sans-serif;
+}
+
+html { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); line-height: 1.55; }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-ui);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
